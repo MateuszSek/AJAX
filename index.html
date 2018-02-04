@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Ajax, JSON - project</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700&amp;subset=latin-ext" rel="stylesheet"> 
+
+  </head>
+  <body>
+    <div id="allContent">
+        <h1>Google Maps and New York Times search</h1>
+        <div id="googleContainer">
+            <div id="googleSearchMenu">
+                <h3>Szukaj w Google Maps</h3>
+                <label for="longitude">Długość geograficzna:</label><input value="-0.118092" id="longitude"><br>
+                <label for="latitude">Szerokość geograficzna:</label><input value = "51.509865" id="latitude">
+                <button id="showMap">Pokaż!</button>
+                <h4>Popularne miasta:</h4>
+                <button id="krakow">Kraków</button>
+                <button id="wroclaw">Wrocław</button>
+                <button id="warszawa">Warszawa</button>
+                <button id="gdansk">Gdańsk</button>
+                <button id="california">California</button>         
+            </div>
+            <div id="map" class="map-responsive map-responsive iframe"></div>
+        </div>
+        <div id="nyContainer">
+            <div id="NYTSearchMenu">
+                <h3>Szukaj w New York Times</h3>
+                <label for="nyItem">Szukane hasło:</label><input id="nyItem">
+                <button id="showArticles">Wyszukaj!</button>
+            </div>
+            <div id="NYTResults">
+                <h3 id="nytimes-header">Results:</h3>
+                <ul id="nytimes-articles"></ul>
+            </div>
+        </div>
+        <footer>Website created by Mateusz Sęk, Copywright &copy; 2018</footer>
+    </div>
+    <script src='js/jquery.js'></script>
+    <script  defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCd8PZOzxKrlaPbw7SKOLH9eYEoG6EDbUs&callback=initMap">
+    </script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

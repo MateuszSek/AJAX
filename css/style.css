@@ -1,0 +1,136 @@
+
+body{
+    background-color: #e6d9d9;
+    color:black;
+}
+
+#allContent{
+    width:90%;
+    margin:auto;
+    font-family: 'Lato', sans-serif;
+    background-color: rgb(177, 165, 165);
+}
+
+h1{
+    text-align: center;
+    background-color: #e6d9d9;
+    margin:0;
+}
+
+h3{
+    text-decoration:underline;
+}
+
+input{
+    width:90px;
+}
+
+#googleContainer{
+    float:left;
+    width: 47%;
+    margin-right: 3%;
+}
+#map {
+    height: 400px;
+    width: 90%;
+    clear: both;
+    display:block;
+    margin:auto;
+    border:black solid;
+    border-radius:5%;
+    margin-bottom: 3%;
+   }
+
+#nyContainer{
+    width:44%;
+    float:left;
+}
+
+footer{
+    clear: both;
+    height: 30px;
+    text-align: center;
+    font-weight: bold;
+    background-color: rgb(59, 57, 57);
+    color:white;
+    vertical-align: middle;
+}
+
+.article{
+    text-decoration: none;
+}
+
+.article a{
+    text-decoration: none;
+    color:black;
+    font-weight: bold;
+}
+
+button{
+    width: 100px;
+    height: 30px;
+    border-radius:10%;
+    background-color: #424040;
+    border: solid rgb(235, 228, 228);
+    color:rgb(235, 228, 228);
+    font-weight: bold;
+    margin-left:2%;
+}
+
+button:hover{
+    background-color: #e2e1e1;
+    border: solid rgb(37, 34, 34);
+    color:rgb(37, 34, 34);  
+}
+
+#googleSearchMenu{
+    width:90%;
+    margin:auto;
+    margin-bottom:2%;
+}
+
+.map-responsive{
+    overflow:hidden;
+    position:relative;
+    height:0;
+}
+.map-responsive iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+}
+
+#NYTSearchMenu{
+    margin-bottom: 10%;
+}
+
+#nyItem{
+    width:120px;
+}
+
+
+@media screen and (max-width: 700px){ /* for screens in range 700-320px */
+
+    #googleContainer{
+        width: 100%;
+    }
+    
+    #nyContainer{
+        width:100%;
+        background-color: grey;
+    }
+
+    input{
+        width:30%;
+    }
+
+    button{
+        width:90%;
+    }
+
+    footer{
+        height: 50px;      
+    }
+}
