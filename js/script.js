@@ -4,7 +4,7 @@ var $nytElem = $('#nytimes-articles');
 
 function NYTSearch(){  // NY Times search function
     var nyItem = $("#nyItem").val();
-    var nySearch = "http://api.nytimes.com/svc/search/v2/articlesearch.json?q="+nyItem+"&sort=newest&api-key=8bdfd17823284d529d4812c0f5fc214c";
+    var nySearch = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q="+nyItem+"&sort=newest&api-key=8bdfd17823284d529d4812c0f5fc214c";
     $("#nytimes-articles").text("");  
     $.getJSON(nySearch, function(data){
         articles=data.response.docs;
