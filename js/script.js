@@ -1,4 +1,3 @@
-
 var $nytHeaderElem = $('#nytimes-header'); //some variables regarding NY Times to store the heading and article itself
 var $nytElem = $('#nytimes-articles');
 
@@ -17,10 +16,8 @@ function NYTSearch(){  // NY Times search function
     });
 }
 
-function initMap() { // Google Maps display function
-    latitude=parseInt($('#latitude').val()*1000000)/1000000; //multiplying-dividing to have the precision of coordinates
-    longitude=parseInt($('#longitude').val()*1000000)/1000000;
-    var uluru = {lat: latitude, lng: longitude};
+function initMap(latit,longit) { // Google Maps display function
+    var uluru = {lat: latit, lng: longit};
     var map = new google.maps.Map(document.getElementById('map'), {
       zoom: 15,
       center: uluru
@@ -31,42 +28,29 @@ function initMap() { // Google Maps display function
     });
 }
 
+cities = ['krakow','wroclaw','warszawa','gdansk','california'] //to add new city, put data into this 3 tables
+lat_data = [50.0646501,51.107885,52.229676,54.352025,33.764000]
+long_data = [19.9449799,17.038538,21.012229,18.646638,-118.182356]
 
 var main = function(){
-    
-    $("#showMap").on('click',function(){ //showing google map
-        initMap();
+
+    initMap(51.509865,-0.118092) //starting map, for example London
+
+    $("#showMap").on('click',function(){ //showing google map once "Pokaż" button is clicked
+        lat_var = parseInt($('#latitude').val()*1000000)/1000000; //multiplying-dividing to have the precision of coordinates
+        long_var = parseInt($('#longitude').val()*1000000)/1000000;
+        initMap(lat_var,long_var);
     });
 
-    $("#krakow").on('click',function(){ //cities
-        $('#latitude').val(50.0646501);
-        $('#longitude').val(19.9449799);
-        initMap();
-    });
-
-    $("#wroclaw").on('click',function(){
-        $('#latitude').val(51.107885);
-        $('#longitude').val(17.038538);
-        initMap();
-    });
-
-    $("#warszawa").on('click',function(){
-        $('#latitude').val(52.229676);
-        $('#longitude').val(21.012229);
-        initMap();
-    });
-
-    $("#gdansk").on('click',function(){
-        $('#latitude').val(54.352025);
-        $('#longitude').val(18.646638);
-        initMap();
-    });
-
-    $("#california").on('click',function(){
-        $('#latitude').val(33.764000);
-        $('#longitude').val(-118.182356);
-        initMap();
-    });
+    $(".city").on('click', function(){
+        for (let i=0;i<cities.length;i++){
+            if ($(this).attr("id")==cities[i]){
+                lat_var = lat_data[i];
+                long_var = long_data[i]
+            }
+        }
+        initMap(lat_var,long_var);
+    })
 
     $("#showArticles").on('click',NYTSearch); //NYTimes search button
 }
