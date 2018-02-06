@@ -1,35 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <title>Ajax, JSON - project</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700&amp;subset=latin-ext" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700&amp;subset=latin-ext" rel="stylesheet">
 
-  </head>
-  <body>
+</head>
+
+<body>
     <div id="allContent">
         <h1>Google Maps and New York Times search</h1>
         <div id="googleContainer">
             <div id="googleSearchMenu">
                 <h3>Szukaj w Google Maps</h3>
-                <label for="longitude">Długość geograficzna:</label><input value="-0.118092" id="longitude"><br>
-                <label for="latitude">Szerokość geograficzna:</label><input value = "51.509865" id="latitude">
+                <label for="longitude">Długość geograficzna:</label>
+                <input value="-0.118092" id="longitude">
+                <br>
+                <label for="latitude">Szerokość geograficzna:</label>
+                <input value="51.509865" id="latitude">
                 <button id="showMap">Pokaż!</button>
                 <h4>Popularne miasta:</h4>
-                <button id="krakow" class="city">Kraków</button>
-                <button id="wroclaw" class="city">Wrocław</button>
-                <button id="warszawa" class="city">Warszawa</button>
-                <button id="gdansk" class="city">Gdańsk</button>
-                <button id="california" class="city">California</button>         
+                <button id="krakow" class="city" data-lat="50.0646501" data-long="19.9449799">Kraków</button>
+                <button id="wroclaw" class="city" data-lat="51.107885" data-long="17.038538">Wrocław</button>
+                <button id="warszawa" class="city" data-lat="52.229676" data-long="21.012229">Warszawa</button>
+                <button id="gdansk" class="city" data-lat="54.352025" data-long="18.646638">Gdańsk</button>
+                <button id="california" class="city" data-lat="33.764000" data-long="-118.182356">California</button>
             </div>
             <div id="map" class="map-responsive map-responsive iframe"></div>
         </div>
         <div id="nyContainer">
             <div id="NYTSearchMenu">
                 <h3>Szukaj w New York Times</h3>
-                <label for="nyItem">Szukane hasło:</label><input id="nyItem">
+                <label for="nyItem">Szukane hasło:</label>
+                <input id="nyItem">
                 <button id="showArticles">Wyszukaj!</button>
             </div>
             <div id="NYTResults">
@@ -40,9 +46,9 @@
         <footer>Website created by Mateusz Sęk, Copywright &copy; 2018</footer>
     </div>
     <script src='js/jquery.js'></script>
-    <script  defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCd8PZOzxKrlaPbw7SKOLH9eYEoG6EDbUs&callback=initMap">
+    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCd8PZOzxKrlaPbw7SKOLH9eYEoG6EDbUs&callback=initMap">
     </script>
     <script src="js/script.js"></script>
-  </body>
+</body>
+
 </html>
